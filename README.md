@@ -1,5 +1,9 @@
 <div align="center">
-  <img src="https://img.logokit.com/hevyapp.com" alt="Hevy Logo" width="220" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/hevy-logo.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="assets/hevy-logo-dark.svg" />
+    <img src="assets/hevy-logo-dark.svg" alt="Hevy Logo" width="220" />
+  </picture>
   <h1>hevy-mcp</h1>
   <p><strong>A Model Context Protocol server for the Hevy workout tracking app.</strong></p>
   <p>Let AI analyze your training, give feedback on your routines, and build personalized workout plans — all connected directly to your Hevy account.</p>
@@ -8,6 +12,9 @@
   <img src="https://img.shields.io/badge/Hevy-Pro_required-orange?style=flat-square" alt="Hevy Pro required" />
   <img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/Node.js-22+-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js" />
+
+  <br /><br />
+  <sub>⚠️ This is an independent, community-built project and is not affiliated with or endorsed by Hevy.</sub>
 </div>
 
 ---
