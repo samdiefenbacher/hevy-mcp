@@ -55,9 +55,9 @@ Once connected, you can ask Claude (or any MCP-compatible AI) things like:
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) v18 or higher
 - A **Hevy Pro** subscription
 - [Claude Desktop](https://claude.ai/download) (or any MCP-compatible client)
+- [Node.js](https://nodejs.org/) v18 or higher **— or —** [Docker](https://www.docker.com/)
 
 ### Step 1 — Get Your Hevy API Key
 
@@ -69,11 +69,21 @@ Once connected, you can ask Claude (or any MCP-compatible AI) things like:
 
 ### Step 2 — Clone and Build
 
+**Option A: Node.js**
+
 ```bash
 git clone https://github.com/samdiefenbacher/hevy-mcp.git
 cd hevy-mcp
 npm install
 npm run build
+```
+
+**Option B: Docker**
+
+```bash
+git clone https://github.com/samdiefenbacher/hevy-mcp.git
+cd hevy-mcp
+docker build -t hevy-mcp .
 ```
 
 ### Step 3 — Configure Claude Desktop
@@ -84,6 +94,8 @@ Open your Claude Desktop config file:
 - **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 
 Add the following under `mcpServers`:
+
+**Option A: Node.js**
 
 ```json
 {
@@ -102,6 +114,22 @@ Add the following under `mcpServers`:
 > Replace `/absolute/path/to/hevy-mcp` with the actual path where you cloned the repo.
 >
 > **Windows example:** `C:\\Users\\YourName\\Documents\\GitHub\\hevy-mcp\\build\\index.js`
+
+**Option B: Docker**
+
+```json
+{
+  "mcpServers": {
+    "hevy": {
+      "command": "docker",
+      "args": ["run", "--rm", "-i", "-e", "HEVY_API_KEY", "hevy-mcp"],
+      "env": {
+        "HEVY_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
 
 ### Step 4 — Restart Claude Desktop
 
