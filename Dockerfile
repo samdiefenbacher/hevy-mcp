@@ -20,6 +20,11 @@ RUN npm ci --omit=dev
 
 COPY --from=builder /app/build ./build
 
+# Context is persisted to /data — mount a volume here to keep it across runs
+RUN mkdir -p /data
 ENV NODE_ENV=production
+ENV HEVY_CONTEXT_PATH=/data/context.json
+
+VOLUME ["/data"]
 
 ENTRYPOINT ["node", "build/index.js"]
