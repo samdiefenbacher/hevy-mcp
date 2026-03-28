@@ -1,0 +1,35 @@
+{
+  "name": "hevy-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for the Hevy workout tracking app",
+  "type": "module",
+  "main": "build/index.js",
+  "bin": {
+    "hevy-mcp": "build/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samdiefenbacher/hevy-mcp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samdiefenbacher/hevy-mcp/issues"
+  },
+  "homepage": "https://github.com/samdiefenbacher/hevy-mcp#readme",
+  "description": "",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.28.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "typescript": "^6.0.2"
+  }
+}
